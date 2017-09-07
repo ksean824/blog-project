@@ -5,6 +5,14 @@ module.exports = function(environment) {
   let ENV = {
     modulePrefix: 'blog-project',
     environment,
+    firebase: {
+      apiKey: "AIzaSyAfnLBaXeOGSFSR0AaV5fEt4B3MNwjbhgA",
+      authDomain: "blog-project-efcaa.firebaseapp.com",
+      databaseURL: "https://blog-project-efcaa.firebaseio.com",
+      projectId: "blog-project-efcaa",
+      storageBucket: "blog-project-efcaa.appspot.com",
+      messagingSenderId: "618412339815"
+    },
     rootURL: '/',
     locationType: 'auto',
     EmberENV: {

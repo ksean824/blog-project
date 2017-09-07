@@ -1,5 +1,20 @@
-{{!-- The following component displays Ember's default welcome message. --}}
-{{welcome-page}}
-{{!-- Feel free to remove this! --}}
-
-{{outlet}}
+<div class="myBlog">
+  <h1>Blog Project</h1>
+  <div class="newPost">
+      <h3>New blog post</h3>
+      {{textarea rows="01" cols="45" value=title placeholder="Title"}}
+      <br><br>
+      {{textarea id="newPostBody" rows="10" cols="45" value=body placeholder="Body of blog post goes here" key-up='onPostBodyKeyUp' maxlength='20'}}
+      <br><br>
+      <button {{action "createNewPost"}}>Create</button>
+  </div>
+  <br><br>
+  {{#each model as |post|}}
+    <div class="existingPost">
+      <h3 class="blogPostTitle">{{post.title}}</h3>
+      <h5>{{post.body}}</h5>
+      {{moment-format post.publishDate 'MM-DD-YYYY HH:mm'}}
+      <button {{action "deletePost" post}}>Delete Post</button>
+    </div>
+  {{/each}}
+</div>
